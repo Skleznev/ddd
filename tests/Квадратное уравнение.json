@@ -1,0 +1,152 @@
+[
+  [
+    {
+      "condition": {
+        "operation": "==",
+        "firstOperand": {
+          "operation": "-",
+          "firstOperand": {
+            "operation": "sqr",
+            "operand": "b"
+          },
+          "secondOperand": {
+            "operation": "*",
+            "firstOperand": {
+              "operation": "*",
+              "firstOperand": 4,
+              "secondOperand": "a"
+            },
+            "secondOperand": "c"
+          }
+        },
+        "secondOperand": 0
+      },
+      "value": {
+        "operation": "/",
+        "firstOperand": {
+          "operation": "-",
+          "operand": "b"
+        },
+        "secondOperand": {
+          "operation": "*",
+          "firstOperand": 2,
+          "secondOperand": "a"
+        }
+      }
+    },
+    {
+      "condition": {
+        "operation": ">",
+        "firstOperand": {
+          "operation": "-",
+          "firstOperand": {
+            "operation": "sqr",
+            "operand": "b"
+          },
+          "secondOperand": {
+            "operation": "*",
+            "firstOperand": {
+              "operation": "*",
+              "firstOperand": 4,
+              "secondOperand": "a"
+            },
+            "secondOperand": "c"
+          }
+        },
+        "secondOperand": 0
+      },
+      "value": {
+        "operation": "/",
+        "firstOperand": {
+          "operation": "+",
+          "firstOperand": {
+            "operation": "-",
+            "operand": "b"
+          },
+          "secondOperand": {
+            "operation": "sqrt",
+            "operand": {
+              "operation": "-",
+              "firstOperand": {
+                "operation": "sqr",
+                "operand": "b"
+              },
+              "secondOperand": {
+                "operation": "*",
+                "firstOperand": {
+                  "operation": "*",
+                  "firstOperand": 4,
+                  "secondOperand": "a"
+                },
+                "secondOperand": "c"
+              }
+            }
+          }
+        },
+        "secondOperand": {
+          "operation": "*",
+          "firstOperand": 2,
+          "secondOperand": "a"
+        }
+      }
+    }
+  ],
+  [
+    {
+      "condition": {
+        "operation": ">",
+        "firstOperand": {
+          "operation": "-",
+          "firstOperand": {
+            "operation": "sqr",
+            "operand": "b"
+          },
+          "secondOperand": {
+            "operation": "*",
+            "firstOperand": {
+              "operation": "*",
+              "firstOperand": 4,
+              "secondOperand": "a"
+            },
+            "secondOperand": "c"
+          }
+        },
+        "secondOperand": 0
+      },
+      "value": {
+        "operation": "/",
+        "firstOperand": {
+          "operation": "-",
+          "firstOperand": {
+            "operation": "-",
+            "operand": "b"
+          },
+          "secondOperand": {
+            "operation": "sqrt",
+            "operand": {
+              "operation": "-",
+              "firstOperand": {
+                "operation": "sqr",
+                "operand": "b"
+              },
+              "secondOperand": {
+                "operation": "*",
+                "firstOperand": {
+                  "operation": "*",
+                  "firstOperand": 4,
+                  "secondOperand": "a"
+                },
+                "secondOperand": "c"
+              }
+            }
+          }
+        },
+        "secondOperand": {
+          "operation": "*",
+          "firstOperand": 2,
+          "secondOperand": "a"
+        }
+      }
+    }
+  ]
+]
