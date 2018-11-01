@@ -7,8 +7,8 @@ export class ConditionalPair extends Expression {
 
     public constructor(args: IConditionalPair) {
         super();
-        this._condition = Expression.parse(args.condition);
-        this._value = Expression.parse(args.value);
+        this._condition = Expression._parse(args.c);
+        this._value = Expression._parse(args.v);
         this.calculateLevels();
     }
 

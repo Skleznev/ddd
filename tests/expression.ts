@@ -10,4 +10,8 @@ describe("expression", () => {
         assert.equal(e.ticks, 6);
         assert.equal(e.processors, 16);
     });
+
+    it("Михаил", () => {
+        Expression.parse(require("./Михаил.json"));
+    });
 });

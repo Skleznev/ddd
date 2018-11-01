@@ -1,3 +1,5 @@
+import * as _ from "lodash";
+
 import {
     IBaseExpression,
     IExpression,
@@ -9,14 +11,27 @@ import {
 } from "./iexpression";
 
 export class Expression {
-    public static parse(obj: IExpression): Expression {
-        if (obj instanceof Array) {
+    public static parse(obj: any): Expression {
+        if (_.isArray(obj) || _.isPlainObject(obj)) {
+            const lowerCaseKeys = (target: any) => _.transform(target, (result: any, value, key) => {
+                if (_.isPlainObject(value)) {
+                    value = lowerCaseKeys(value);
+                }
+                result[_.isString(key) ? key.toLowerCase() : key] = value;
+            });
+            obj = lowerCaseKeys(obj);
+        }
+        return Expression._parse(obj);
+    }
+
+    protected static _parse(obj: IExpression): Expression {
+        if (_.isArray(obj)) {
             return Expression.parseArray(obj);
         }
-        if (typeof obj === "string") {
+        if (_.isString(obj)) {
             return Expression.parseString(obj);
         }
-        if (typeof obj === "number") {
+        if (_.isNumber(obj)) {
             return Expression.parseNumber(obj);
         } else {
             return Expression.parseObj(obj);
@@ -24,7 +39,7 @@ export class Expression {
     }
 
     private static parseArray(obj: IBaseExpression[]): Expression {
-        return new ExpressionsList(obj.map((item) => Expression.parse(item)));
+        return new ExpressionsList(obj.map((item) => Expression._parse(item)));
     }
 
     private static parseString(obj: string): Expression {
@@ -46,10 +61,10 @@ export class Expression {
             return new UnaryExpression(obj);
         }
         if (isIVariable(obj)) {
-            return new VariableExpression(obj.name);
+            return new VariableExpression(obj.n);
         }
         if (isINumber(obj)) {
-            return new NumberExpression(obj.value);
+            return new NumberExpression(obj.v);
         }
         throw new Error("unknown type!");
     }

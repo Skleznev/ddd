@@ -1,150 +1,150 @@
 [
   [
     {
-      "condition": {
-        "operation": "==",
-        "firstOperand": {
-          "operation": "-",
-          "firstOperand": {
-            "operation": "sqr",
-            "operand": "b"
+      "c": {
+        "op": "==",
+        "fo": {
+          "op": "-",
+          "fo": {
+            "op": "sqr",
+            "od": "b"
           },
-          "secondOperand": {
-            "operation": "*",
-            "firstOperand": {
-              "operation": "*",
-              "firstOperand": 4,
-              "secondOperand": "a"
+          "so": {
+            "op": "*",
+            "fo": {
+              "op": "*",
+              "fo": 4,
+              "so": "a"
             },
-            "secondOperand": "c"
+            "so": "c"
           }
         },
-        "secondOperand": 0
+        "so": 0
       },
-      "value": {
-        "operation": "/",
-        "firstOperand": {
-          "operation": "-",
-          "operand": "b"
+      "v": {
+        "op": "/",
+        "fo": {
+          "op": "-",
+          "od": "b"
         },
-        "secondOperand": {
-          "operation": "*",
-          "firstOperand": 2,
-          "secondOperand": "a"
+        "so": {
+          "op": "*",
+          "fo": 2,
+          "so": "a"
         }
       }
     },
     {
-      "condition": {
-        "operation": ">",
-        "firstOperand": {
-          "operation": "-",
-          "firstOperand": {
-            "operation": "sqr",
-            "operand": "b"
+      "c": {
+        "op": ">",
+        "fo": {
+          "op": "-",
+          "fo": {
+            "op": "sqr",
+            "od": "b"
           },
-          "secondOperand": {
-            "operation": "*",
-            "firstOperand": {
-              "operation": "*",
-              "firstOperand": 4,
-              "secondOperand": "a"
+          "so": {
+            "op": "*",
+            "fo": {
+              "op": "*",
+              "fo": 4,
+              "so": "a"
             },
-            "secondOperand": "c"
+            "so": "c"
           }
         },
-        "secondOperand": 0
+        "so": 0
       },
-      "value": {
-        "operation": "/",
-        "firstOperand": {
-          "operation": "+",
-          "firstOperand": {
-            "operation": "-",
-            "operand": "b"
+      "v": {
+        "op": "/",
+        "fo": {
+          "op": "+",
+          "fo": {
+            "op": "-",
+            "od": "b"
           },
-          "secondOperand": {
-            "operation": "sqrt",
-            "operand": {
-              "operation": "-",
-              "firstOperand": {
-                "operation": "sqr",
-                "operand": "b"
+          "so": {
+            "op": "sqrt",
+            "od": {
+              "op": "-",
+              "fo": {
+                "op": "sqr",
+                "od": "b"
               },
-              "secondOperand": {
-                "operation": "*",
-                "firstOperand": {
-                  "operation": "*",
-                  "firstOperand": 4,
-                  "secondOperand": "a"
+              "so": {
+                "op": "*",
+                "fo": {
+                  "op": "*",
+                  "fo": 4,
+                  "so": "a"
                 },
-                "secondOperand": "c"
+                "so": "c"
               }
             }
           }
         },
-        "secondOperand": {
-          "operation": "*",
-          "firstOperand": 2,
-          "secondOperand": "a"
+        "so": {
+          "op": "*",
+          "fo": 2,
+          "so": "a"
         }
       }
     }
   ],
   [
     {
-      "condition": {
-        "operation": ">",
-        "firstOperand": {
-          "operation": "-",
-          "firstOperand": {
-            "operation": "sqr",
-            "operand": "b"
+      "c": {
+        "op": ">",
+        "fo": {
+          "op": "-",
+          "fo": {
+            "op": "sqr",
+            "od": "b"
           },
-          "secondOperand": {
-            "operation": "*",
-            "firstOperand": {
-              "operation": "*",
-              "firstOperand": 4,
-              "secondOperand": "a"
+          "so": {
+            "op": "*",
+            "fo": {
+              "op": "*",
+              "fo": 4,
+              "so": "a"
             },
-            "secondOperand": "c"
+            "so": "c"
           }
         },
-        "secondOperand": 0
+        "so": 0
       },
-      "value": {
-        "operation": "/",
-        "firstOperand": {
-          "operation": "-",
-          "firstOperand": {
-            "operation": "-",
-            "operand": "b"
+      "v": {
+        "op": "/",
+        "fo": {
+          "op": "-",
+          "fo": {
+            "op": "-",
+            "od": "b"
           },
-          "secondOperand": {
-            "operation": "sqrt",
-            "operand": {
-              "operation": "-",
-              "firstOperand": {
-                "operation": "sqr",
-                "operand": "b"
+          "so": {
+            "op": "sqrt",
+            "od": {
+              "op": "-",
+              "fo": {
+                "op": "sqr",
+                "od": "b"
               },
-              "secondOperand": {
-                "operation": "*",
-                "firstOperand": {
-                  "operation": "*",
-                  "firstOperand": 4,
-                  "secondOperand": "a"
+              "so": {
+                "op": "*",
+                "fo": {
+                  "op": "*",
+                  "fo": 4,
+                  "so": "a"
                 },
-                "secondOperand": "c"
+                "so": "c"
               }
             }
           }
         },
-        "secondOperand": {
-          "operation": "*",
-          "firstOperand": 2,
-          "secondOperand": "a"
+        "so": {
+          "op": "*",
+          "fo": 2,
+          "so": "a"
         }
       }
     }

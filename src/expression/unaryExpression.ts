@@ -7,8 +7,8 @@ export class UnaryExpression extends Expression {
 
     public constructor(args: IUnaryExpression) {
         super();
-        this._operation = args.operation;
-        this._operand = Expression.parse(args.operand);
+        this._operation = args.op;
+        this._operand = Expression._parse(args.od);
         this.calculateLevels();
     }
 

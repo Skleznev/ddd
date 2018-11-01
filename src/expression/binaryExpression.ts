@@ -8,9 +8,9 @@ export class BinaryExpression extends Expression {
 
     public constructor(args: IBinaryExpression) {
         super();
-        this._operation = args.operation;
-        this._firstOperand = Expression.parse(args.firstOperand);
-        this._secondOperand = Expression.parse(args.secondOperand);
+        this._operation = args.op;
+        this._firstOperand = Expression._parse(args.fo);
+        this._secondOperand = Expression._parse(args.so);
         this.calculateLevels();
     }
 

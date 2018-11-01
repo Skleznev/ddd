@@ -34,36 +34,38 @@ POST http://localhost:8080/algorithm/1/determinant
 Content-Type: application/json
 
 {
-    "dimensions": [11],
-    "expression": {
-        "operation": "+",
-        "firstOperand": {
-            "operation": "+",
-            "firstOperand": {
-                "operation": "+",
-                "firstOperand": {
-                    "operation": "*",
-                    "firstOperand": "A(1,1)",
-                    "secondOperand": "B(1,1)"
-                },
-                "secondOperand": {
-                    "operation": "*",
-                    "firstOperand": "A(1,2)",
-                    "secondOperand": "B(2,1)"
-                }
-            },
-            "secondOperand": {
-                "operation": "*",
-                "firstOperand": "A(1,3)",
-                "secondOperand": "B(3,1)"
-            }
+  "dimensions": [
+    11
+  ],
+  "expression": {
+    "op": "+",
+    "fo": {
+      "op": "+",
+      "fo": {
+        "op": "+",
+        "fo": {
+          "op": "*",
+          "fo": "A(1,1)",
+          "so": "B(1,1)"
         },
-        "secondOperand": {
-            "operation": "*",
-            "firstOperand": "A(1,4)",
-            "secondOperand": "B(4,1)"
+        "so": {
+          "op": "*",
+          "fo": "A(1,2)",
+          "so": "B(2,1)"
         }
+      },
+      "so": {
+        "op": "*",
+        "fo": "A(1,3)",
+        "so": "B(3,1)"
+      }
+    },
+    "so": {
+      "op": "*",
+      "fo": "A(1,4)",
+      "so": "B(4,1)"
     }
+  }
 }
 
 ###
