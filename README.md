@@ -26,6 +26,7 @@ PORT=8080
 DATABASE_URL=postgresql://postgres@localhost:5432/postgres
 DATABASE_MAX=20 # Maximum connection for DB for instance
 DATABASE_SSL=true (do not set for unsecured connection)
+EXPRESS_BODY_PARSER_LIMIT_JSON=1TB
 ```
 
 ## GET `/algorithms` - get all algorithms
