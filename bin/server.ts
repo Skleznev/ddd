@@ -1,12 +1,9 @@
-import * as dotenv from "dotenv";
-import * as path from "path";
+import "../global";
 
-dotenv.config({
-    path: path.resolve(__dirname, "../../.env"),
-});
+import * as debug from "debug";
 
-import {app, Debug} from "../";
+import {app} from "src";
 
 app.listen(process.env.PORT, () => {
-    Debug.log(`Listen on port ${process.env.PORT}`);
+  debug("qbaseserver")(`Listen on port ${process.env.PORT}`);
 });

@@ -5,7 +5,7 @@ API Server for QBase
 ## How to start?
 
 - `$ yarn install`
-- Create DB via code from [db](db) directory
+- Apply all DB migrations from [db](db) directory
 - Set **Env variables**
 - `$ yarn start`
 
@@ -43,7 +43,7 @@ Response body (example)
 ]
 ```
 
-## POST `/algorithm` - create new algorithm
+## POST `/algorithms` - create new algorithm
 
 Request body (example)
 
@@ -58,98 +58,11 @@ Response body (example)
 
 ```json
 {
-  "description": "Description",
-  "id": "1",
-  "name": "Matrix"
+  "id": "1"
 }
 ```
 
-## GET `/algorithm/:id` - get algorithm
-
-Response body (example)
-
-```json
-{
-  "description": "Description",
-  "id": "1",
-  "name": "Matrix"
-}
-```
-
-## DELETE `/algorithm/:id` - delete algorithm
-
-## PUT `/algorithm/:id` - update algorithm
-
-Request body (example)
-
-```json
-{
-  "description": "Description",
-  "name": "Matrix"
-}
-```
-
-Response body (example)
-
-```json
-{
-  "description": "Description",
-  "id": "1",
-  "name": "Matrix"
-}
-```
-
-## POST `/algorithm/:id/determinant` - create determinant for algorithm
-
-Request body (example)
-
-```json
-{
-  "dimensions": [4, 7],
-  "expression": {}
-}
-```
-
-Response body (example)
-
-```json
-{
-  "id": "1",
-  "algorithm": "1",
-  "dimensions": [4, 7],
-  "expression": {},
-  "processors": 4,
-  "ticks": 7
-}
-```
-
-## GET `/algorithm/:id/determinants` - get all determinants for algorithm
-
-Response body (example)
-
-```json
-[
-  {
-    "id": "1",
-    "algorithm": "1",
-    "dimensions": [4, 7],
-    "expression": {},
-    "processors": 4,
-    "ticks": 7
-  }
-]
-```
-
-## POST `/algorithms/compare` - compare two algorithms
-
-Request body (example)
-
-```json
-{
-  "id1": "1",
-  "id2": "2"
-}
-```
+## GET `/algorithms/compare/:id1-:id2` - compare two algorithms
 
 Response body (example)
 
@@ -160,19 +73,93 @@ Response body (example)
 }
 ```
 
-## GET `/determinant/:id` - get determinant
+## DELETE `/algorithms/:id` - delete algorithm
+
+## GET `/algorithms/:id` - get algorithm
 
 Response body (example)
 
 ```json
 {
+  "description": "Description",
   "id": "1",
+  "name": "Matrix"
+}
+```
+
+## PUT `/algorithms/:id` - update algorithm
+
+Request body (example)
+
+```json
+{
+  "description": "Description",
+  "name": "Matrix"
+}
+```
+
+## GET `/algorithms/:id/determinants` - get all determinants for algorithm
+
+Response body (example)
+
+```json
+[
+  {
+    "algorithm": "1",
+    "dimensions": [4, 7],
+    "expression": {},
+    "id": "1",
+    "iterations": 69,
+    "processors": 4,
+    "ticks": 7
+  }
+]
+```
+
+## POST `/algorithms/:id/determinants` - create determinant for algorithm
+
+Request body (example)
+
+```json
+{
+  "dimensions": [4, 7],
+  "expression": {},
+  "iterations": 69
+}
+```
+
+Response body (example)
+
+```json
+{
+  "id": "1"
+}
+```
+
+## DELETE `/algorithms/:id/determinants/:id` - delete determinant from algorithm
+
+## GET `/algorithms/:id/determinants/:id` - get determinant from algorithm
+
+Response body (example)
+
+```json
+{
   "algorithm": "1",
   "dimensions": [4, 7],
   "expression": {},
+  "id": "1",
+  "iterations": 69,
   "processors": 4,
   "ticks": 7
 }
 ```
 
-## DELETE `/determinant/:id` - delete determinant
+## PATCH `/algorithms/:id/determinants/:id` - patch determinant
+
+Request body (example)
+
+```json
+{
+  "iterations": 69
+}
+```

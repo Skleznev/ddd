@@ -1,8 +1,8 @@
 import {Router} from "express";
 
+import _id1_id2 from "./_id1_id2";
+
 const router = Router();
 export default router;
 
-import _id from "./_id";
-
-router.use("/:id", _id);
+router.use("/:id1-:id2", _id1_id2);
