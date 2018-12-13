@@ -1,11 +1,13 @@
 import {Router} from "express";
 
-import {Expression, pool} from "src";
+import {Expression, pool, requireUser} from "src";
 
 const router = Router({
   mergeParams: true,
 });
 export default router;
+
+router.use(requireUser);
 
 router.use(async (req, res, next) => {
   try {

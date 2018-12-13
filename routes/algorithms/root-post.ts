@@ -1,9 +1,11 @@
 import {Router} from "express";
 
-import {pool} from "src";
+import {pool, requireUser} from "src";
 
 const router = Router();
 export default router;
+
+router.use(requireUser);
 
 router.use(async (req, res, next) => {
   try {

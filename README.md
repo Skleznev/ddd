@@ -20,13 +20,15 @@ API Server for QBase
 
 ## Env variables
 
-```bash
-DEBUG=qbaseserver (optional)
+```dotenv
+DEBUG=qbaseserver # optional
 PORT=8080
 DATABASE_URL=postgresql://postgres@localhost:5432/postgres
-DATABASE_MAX=20 # Maximum connection for DB for instance
-DATABASE_SSL=true (do not set for unsecured connection)
+DATABASE_MAX=20 # maximum connection for DB for instance
+DATABASE_SSL=true # do not set for unsecured connection
 EXPRESS_BODY_PARSER_LIMIT_JSON=1TB
+JWT_SECRET=secret
+USER*=user:password
 ```
 
 ## GET `/algorithms` - get all algorithms
@@ -44,6 +46,8 @@ Response body (example)
 ```
 
 ## POST `/algorithms` - create new algorithm
+
+> REQUIRED AUTH!
 
 Request body (example)
 
@@ -75,6 +79,8 @@ Response body (example)
 
 ## DELETE `/algorithms/:id` - delete algorithm
 
+> REQUIRED AUTH!
+
 ## GET `/algorithms/:id` - get algorithm
 
 Response body (example)
@@ -88,6 +94,8 @@ Response body (example)
 ```
 
 ## PUT `/algorithms/:id` - update algorithm
+
+> REQUIRED AUTH!
 
 Request body (example)
 
@@ -118,6 +126,8 @@ Response body (example)
 
 ## POST `/algorithms/:id/determinants` - create determinant for algorithm
 
+> REQUIRED AUTH!
+
 Request body (example)
 
 ```json
@@ -138,6 +148,8 @@ Response body (example)
 
 ## DELETE `/algorithms/:id/determinants/:id` - delete determinant from algorithm
 
+> REQUIRED AUTH!
+
 ## GET `/algorithms/:id/determinants/:id` - get determinant from algorithm
 
 Response body (example)
@@ -156,10 +168,43 @@ Response body (example)
 
 ## PATCH `/algorithms/:id/determinants/:id` - patch determinant
 
+> REQUIRED AUTH!
+
 Request body (example)
 
 ```json
 {
   "iterations": 69
+}
+```
+
+## POST /signin
+
+Request body (example)
+
+```json
+{
+  "user": "user",
+  "password": "password"
+}
+```
+
+Response body (example)
+
+```json
+{
+  "token": "bearer auth token"
+}
+```
+
+# GET /whoami
+
+> REQUIRED AUTH!
+
+Response body (example)
+
+```json
+{
+  "user": "user"
 }
 ```
